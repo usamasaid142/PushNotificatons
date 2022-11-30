@@ -20,12 +20,15 @@ class NotificationApp {
 
     constructor(context: Context) {
         this.context = context
+        instance=this
         Notificationmangercompat = NotificationManagerCompat.from(context)
         notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
     }
 
-    private fun getInstance(context: Context):NotificationApp{
+    companion object {}
+
+  fun  getInstance(context: Context):NotificationApp{
         if (instance==null){
             instance= NotificationApp(context)
         }
@@ -34,8 +37,9 @@ class NotificationApp {
 
 
 
+
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun createChannel(notification_id:String,notificatio_name:String) { //   create notification channel
+     fun createChannel(notification_id:String,notificatio_name:String) { //   create notification channel
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
         val channel = NotificationChannel(
@@ -50,7 +54,7 @@ class NotificationApp {
 
 
     @RequiresApi(Build.VERSION_CODES.M)
-    private fun triggerNotification(channel_id:String,title:String,conenttext:String) {
+    fun triggerNotification(channel_id:String,title:String,conenttext:String) {
 
 
         val intent = Intent(context, MainActivity::class.java)

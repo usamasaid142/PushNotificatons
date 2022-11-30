@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initButton()
+
     }
 
 
@@ -47,6 +48,9 @@ class MainActivity : AppCompatActivity() {
         binding.btnNotify.setOnClickListener {
 
            // triggerNotification()
+
+            (application as (App)).ttrigerNotifiction("notification ", "this is my notification")
+
         }
     }
 
