@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PushNotificatons</string>
+    <string name="Notification_channel_Id">Notification_channel_Id</string>
+    <string name="Notification_channel_Name">Notification_channel_Name</string>
+    <string name="cancel_description">Cancel Description</string>
+
+
+</resources>
